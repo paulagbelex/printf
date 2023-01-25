@@ -126,12 +126,12 @@ int write_num(int ind, char buffer[],
 		else if (!(flags & F_MINUS) && padd == ' ')
 			if (extra_c)
 				buffer[--ind] = extra_c;
-			return (write(1, &buffer[1], i - 1) +
+	       	return (write(1, &buffer[1], i - 1) +
 				write(1, &buffer[ind], length));
-		else if (!(flags & F_MINUS) && padd == '0')
+		if (!(flags & F_MINUS) && padd == '0')
 			if (extra_c)
 				buffer[--padd_start] = extra_c;
-			return (write(1, &buffer[padd_start], i - padd_start) +
+       		return (write(1, &buffer[padd_start], i - padd_start) +
 				write(1, &buffer[ind], length -
 				      (1 - padd_start)));
 	}
@@ -242,9 +242,9 @@ int write_pointer(char buffer[], int ind, int length,
 		else if (!(flags & F_MINUS) && padd == '0')
 			if (extra_c)
 				buffer[--padd_start] = extra_c;
-			buffer[1] = '0';
-			buffer[2] = 'x';
-			return (write(1, &buffer[padd_start], i - padd_start) +
+		buffer[1] = '0';
+		buffer[2] = 'x';
+		return (write(1, &buffer[padd_start], i - padd_start) +
 				write(1, &buffer[ind], length - (1 - padd_start)
 				      - 2));
 	}

@@ -2,8 +2,6 @@
 #include <stdio.h>
 #include "main.h"
 
-/*remove this comment*/
-
 /**
  * main - Entry point
  *
