@@ -126,12 +126,12 @@ int write_num(int ind, char buffer[],
 		else if (!(flags & F_MINUS) && padd == ' ')
 			if (extra_c)
 				buffer[--ind] = extra_c;
-	       	return (write(1, &buffer[1], i - 1) +
+		return (write(1, &buffer[1], i - 1) +
 				write(1, &buffer[ind], length));
 		if (!(flags & F_MINUS) && padd == '0')
 			if (extra_c)
 				buffer[--padd_start] = extra_c;
-       		return (write(1, &buffer[padd_start], i - padd_start) +
+		return (write(1, &buffer[padd_start], i - padd_start) +
 				write(1, &buffer[ind], length -
 				      (1 - padd_start)));
 	}
